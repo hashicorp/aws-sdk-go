@@ -3166,7 +3166,7 @@ type DescribeInstancesResult struct {
 type DescribeInternetGatewaysRequest struct {
 	DryRun             aws.BooleanValue `ec2:"DryRun" xml:"dryRun"`
 	Filters            []Filter         `ec2:"Filter" xml:"Filter>Filter"`
-	InternetGatewayIDs []string         `ec2:"InternetGatewayIds" xml:"internetGatewayId>item"`
+	InternetGatewayIDs []string         `ec2:"InternetGatewayId" xml:"internetGatewayId>item"`
 }
 
 // DescribeInternetGatewaysResult is undocumented.
