@@ -95,6 +95,9 @@ func (c *EC2Client) loadValues(v url.Values, i interface{}, prefix string) error
 	for value.Kind() == reflect.Ptr {
 		value = value.Elem()
 	}
+	if value.Kind() == reflect.Invalid {
+		return nil
+	}
 	if casted, ok := value.Interface().([]byte); ok && prefix != "" {
 		v.Set(prefix, string(casted))
 		return nil
