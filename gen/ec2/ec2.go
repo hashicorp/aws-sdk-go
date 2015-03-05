@@ -2479,7 +2479,7 @@ type CancelledSpotInstanceRequest struct {
 type ClassicLinkInstance struct {
 	Groups     []GroupIdentifier `ec2:"Groups" xml:"groupSet>item"`
 	InstanceID aws.StringValue   `ec2:"InstanceId" xml:"instanceId"`
-	Tags       []Tag             `ec2:"Tags" xml:"tagSet>item"`
+	Tags       []Tag             `ec2:"Tag" xml:"tagSet>item"`
 	VPCID      aws.StringValue   `ec2:"VpcId" xml:"vpcId"`
 }
 
@@ -2508,7 +2508,7 @@ type ConversionTask struct {
 	ImportVolume     *ImportVolumeTaskDetails   `ec2:"ImportVolume" xml:"importVolume"`
 	State            aws.StringValue            `ec2:"State" xml:"state"`
 	StatusMessage    aws.StringValue            `ec2:"StatusMessage" xml:"statusMessage"`
-	Tags             []Tag                      `ec2:"Tags" xml:"tagSet>item"`
+	Tags             []Tag                      `ec2:"Tag" xml:"tagSet>item"`
 }
 
 // Possible values for EC2.
@@ -2843,7 +2843,7 @@ type CustomerGateway struct {
 	CustomerGatewayID aws.StringValue `ec2:"CustomerGatewayId" xml:"customerGatewayId"`
 	IPAddress         aws.StringValue `ec2:"IpAddress" xml:"ipAddress"`
 	State             aws.StringValue `ec2:"State" xml:"state"`
-	Tags              []Tag           `ec2:"Tags" xml:"tagSet>item"`
+	Tags              []Tag           `ec2:"Tag" xml:"tagSet>item"`
 	Type              aws.StringValue `ec2:"Type" xml:"type"`
 }
 
@@ -2943,8 +2943,8 @@ type DeleteSubnetRequest struct {
 // DeleteTagsRequest is undocumented.
 type DeleteTagsRequest struct {
 	DryRun    aws.BooleanValue `ec2:"DryRun" xml:"dryRun"`
-	Resources []string         `ec2:"Resources" xml:"resourceId>member"`
-	Tags      []Tag            `ec2:"Tags" xml:"tag>item"`
+	Resources []string         `ec2:"ResourceId" xml:"resourceId>member"`
+	Tags      []Tag            `ec2:"Tag" xml:"tag>item"`
 }
 
 // DeleteVolumeRequest is undocumented.
@@ -3429,7 +3429,7 @@ type DescribeTagsRequest struct {
 // DescribeTagsResult is undocumented.
 type DescribeTagsResult struct {
 	NextToken aws.StringValue  `ec2:"NextToken" xml:"nextToken"`
-	Tags      []TagDescription `ec2:"Tags" xml:"tagSet>item"`
+	Tags      []TagDescription `ec2:"Tag" xml:"tagSet>item"`
 }
 
 // DescribeVolumeAttributeRequest is undocumented.
@@ -3608,7 +3608,7 @@ type DHCPConfiguration struct {
 type DHCPOptions struct {
 	DHCPConfigurations []DHCPConfiguration `ec2:"DhcpConfigurations" xml:"dhcpConfigurationSet>item"`
 	DHCPOptionsID      aws.StringValue     `ec2:"DhcpOptionsId" xml:"dhcpOptionsId"`
-	Tags               []Tag               `ec2:"Tags" xml:"tagSet>item"`
+	Tags               []Tag               `ec2:"Tag" xml:"tagSet>item"`
 }
 
 // DisableVGWRoutePropagationRequest is undocumented.
@@ -3869,7 +3869,7 @@ type Image struct {
 	SRIOVNetSupport     aws.StringValue      `ec2:"SriovNetSupport" xml:"sriovNetSupport"`
 	State               aws.StringValue      `ec2:"State" xml:"imageState"`
 	StateReason         *StateReason         `ec2:"StateReason" xml:"stateReason"`
-	Tags                []Tag                `ec2:"Tags" xml:"tagSet>item"`
+	Tags                []Tag                `ec2:"Tag" xml:"tagSet>item"`
 	VirtualizationType  aws.StringValue      `ec2:"VirtualizationType" xml:"virtualizationType"`
 }
 
@@ -4028,7 +4028,7 @@ type Instance struct {
 	StateReason           *StateReason                 `ec2:"StateReason" xml:"stateReason"`
 	StateTransitionReason aws.StringValue              `ec2:"StateTransitionReason" xml:"reason"`
 	SubnetID              aws.StringValue              `ec2:"SubnetId" xml:"subnetId"`
-	Tags                  []Tag                        `ec2:"Tags" xml:"tagSet>item"`
+	Tags                  []Tag                        `ec2:"Tag" xml:"tagSet>item"`
 	VirtualizationType    aws.StringValue              `ec2:"VirtualizationType" xml:"virtualizationType"`
 	VPCID                 aws.StringValue              `ec2:"VpcId" xml:"vpcId"`
 }
@@ -4266,7 +4266,7 @@ const (
 type InternetGateway struct {
 	Attachments       []InternetGatewayAttachment `ec2:"Attachments" xml:"attachmentSet>item"`
 	InternetGatewayID aws.StringValue             `ec2:"InternetGatewayId" xml:"internetGatewayId"`
-	Tags              []Tag                       `ec2:"Tags" xml:"tagSet>item"`
+	Tags              []Tag                       `ec2:"Tag" xml:"tagSet>item"`
 }
 
 // InternetGatewayAttachment is undocumented.
@@ -4464,7 +4464,7 @@ type NetworkACL struct {
 	Entries      []NetworkACLEntry       `ec2:"Entries" xml:"entrySet>item"`
 	IsDefault    aws.BooleanValue        `ec2:"IsDefault" xml:"default"`
 	NetworkACLID aws.StringValue         `ec2:"NetworkAclId" xml:"networkAclId"`
-	Tags         []Tag                   `ec2:"Tags" xml:"tagSet>item"`
+	Tags         []Tag                   `ec2:"Tag" xml:"tagSet>item"`
 	VPCID        aws.StringValue         `ec2:"VpcId" xml:"vpcId"`
 }
 
@@ -4895,7 +4895,7 @@ type ReservedInstances struct {
 	ReservedInstancesID aws.StringValue   `ec2:"ReservedInstancesId" xml:"reservedInstancesId"`
 	Start               time.Time         `ec2:"Start" xml:"start"`
 	State               aws.StringValue   `ec2:"State" xml:"state"`
-	Tags                []Tag             `ec2:"Tags" xml:"tagSet>item"`
+	Tags                []Tag             `ec2:"Tag" xml:"tagSet>item"`
 	UsagePrice          aws.FloatValue    `ec2:"UsagePrice" xml:"usagePrice"`
 }
 
@@ -4922,7 +4922,7 @@ type ReservedInstancesListing struct {
 	ReservedInstancesListingID aws.StringValue `ec2:"ReservedInstancesListingId" xml:"reservedInstancesListingId"`
 	Status                     aws.StringValue `ec2:"Status" xml:"status"`
 	StatusMessage              aws.StringValue `ec2:"StatusMessage" xml:"statusMessage"`
-	Tags                       []Tag           `ec2:"Tags" xml:"tagSet>item"`
+	Tags                       []Tag           `ec2:"Tag" xml:"tagSet>item"`
 	UpdateDate                 time.Time       `ec2:"UpdateDate" xml:"updateDate"`
 }
 
@@ -5074,7 +5074,7 @@ type RouteTable struct {
 	PropagatingVGWs []PropagatingVGW        `ec2:"PropagatingVgws" xml:"propagatingVgwSet>item"`
 	RouteTableID    aws.StringValue         `ec2:"RouteTableId" xml:"routeTableId"`
 	Routes          []Route                 `ec2:"Routes" xml:"routeSet>item"`
-	Tags            []Tag                   `ec2:"Tags" xml:"tagSet>item"`
+	Tags            []Tag                   `ec2:"Tag" xml:"tagSet>item"`
 	VPCID           aws.StringValue         `ec2:"VpcId" xml:"vpcId"`
 }
 
@@ -5141,7 +5141,7 @@ type SecurityGroup struct {
 	IPPermissions       []IPPermission  `ec2:"IpPermissions" xml:"ipPermissions>item"`
 	IPPermissionsEgress []IPPermission  `ec2:"IpPermissionsEgress" xml:"ipPermissionsEgress>item"`
 	OwnerID             aws.StringValue `ec2:"OwnerId" xml:"ownerId"`
-	Tags                []Tag           `ec2:"Tags" xml:"tagSet>item"`
+	Tags                []Tag           `ec2:"Tag" xml:"tagSet>item"`
 	VPCID               aws.StringValue `ec2:"VpcId" xml:"vpcId"`
 }
 
@@ -5162,7 +5162,7 @@ type Snapshot struct {
 	SnapshotID  aws.StringValue  `ec2:"SnapshotId" xml:"snapshotId"`
 	StartTime   time.Time        `ec2:"StartTime" xml:"startTime"`
 	State       aws.StringValue  `ec2:"State" xml:"status"`
-	Tags        []Tag            `ec2:"Tags" xml:"tagSet>item"`
+	Tags        []Tag            `ec2:"Tag" xml:"tagSet>item"`
 	VolumeID    aws.StringValue  `ec2:"VolumeId" xml:"volumeId"`
 	VolumeSize  aws.IntegerValue `ec2:"VolumeSize" xml:"volumeSize"`
 }
@@ -5203,7 +5203,7 @@ type SpotInstanceRequest struct {
 	SpotPrice                aws.StringValue         `ec2:"SpotPrice" xml:"spotPrice"`
 	State                    aws.StringValue         `ec2:"State" xml:"state"`
 	Status                   *SpotInstanceStatus     `ec2:"Status" xml:"status"`
-	Tags                     []Tag                   `ec2:"Tags" xml:"tagSet>item"`
+	Tags                     []Tag                   `ec2:"Tag" xml:"tagSet>item"`
 	Type                     aws.StringValue         `ec2:"Type" xml:"type"`
 	ValidFrom                time.Time               `ec2:"ValidFrom" xml:"validFrom"`
 	ValidUntil               time.Time               `ec2:"ValidUntil" xml:"validUntil"`
@@ -5308,7 +5308,7 @@ type Subnet struct {
 	MapPublicIPOnLaunch     aws.BooleanValue `ec2:"MapPublicIpOnLaunch" xml:"mapPublicIpOnLaunch"`
 	State                   aws.StringValue  `ec2:"State" xml:"state"`
 	SubnetID                aws.StringValue  `ec2:"SubnetId" xml:"subnetId"`
-	Tags                    []Tag            `ec2:"Tags" xml:"tagSet>item"`
+	Tags                    []Tag            `ec2:"Tag" xml:"tagSet>item"`
 	VPCID                   aws.StringValue  `ec2:"VpcId" xml:"vpcId"`
 }
 
@@ -5418,7 +5418,7 @@ type Volume struct {
 	Size             aws.IntegerValue   `ec2:"Size" xml:"size"`
 	SnapshotID       aws.StringValue    `ec2:"SnapshotId" xml:"snapshotId"`
 	State            aws.StringValue    `ec2:"State" xml:"status"`
-	Tags             []Tag              `ec2:"Tags" xml:"tagSet>item"`
+	Tags             []Tag              `ec2:"Tag" xml:"tagSet>item"`
 	VolumeID         aws.StringValue    `ec2:"VolumeId" xml:"volumeId"`
 	VolumeType       aws.StringValue    `ec2:"VolumeType" xml:"volumeType"`
 }
@@ -5527,7 +5527,7 @@ type VPC struct {
 	InstanceTenancy aws.StringValue  `ec2:"InstanceTenancy" xml:"instanceTenancy"`
 	IsDefault       aws.BooleanValue `ec2:"IsDefault" xml:"isDefault"`
 	State           aws.StringValue  `ec2:"State" xml:"state"`
-	Tags            []Tag            `ec2:"Tags" xml:"tagSet>item"`
+	Tags            []Tag            `ec2:"Tag" xml:"tagSet>item"`
 	VPCID           aws.StringValue  `ec2:"VpcId" xml:"vpcId"`
 }
 
@@ -5546,7 +5546,7 @@ const (
 // VPCClassicLink is undocumented.
 type VPCClassicLink struct {
 	ClassicLinkEnabled aws.BooleanValue `ec2:"ClassicLinkEnabled" xml:"classicLinkEnabled"`
-	Tags               []Tag            `ec2:"Tags" xml:"tagSet>item"`
+	Tags               []Tag            `ec2:"Tag" xml:"tagSet>item"`
 	VPCID              aws.StringValue  `ec2:"VpcId" xml:"vpcId"`
 }
 
@@ -5556,7 +5556,7 @@ type VPCPeeringConnection struct {
 	ExpirationTime         time.Time                        `ec2:"ExpirationTime" xml:"expirationTime"`
 	RequesterVPCInfo       *VPCPeeringConnectionVPCInfo     `ec2:"RequesterVpcInfo" xml:"requesterVpcInfo"`
 	Status                 *VPCPeeringConnectionStateReason `ec2:"Status" xml:"status"`
-	Tags                   []Tag                            `ec2:"Tags" xml:"tagSet>item"`
+	Tags                   []Tag                            `ec2:"Tag" xml:"tagSet>item"`
 	VPCPeeringConnectionID aws.StringValue                  `ec2:"VpcPeeringConnectionId" xml:"vpcPeeringConnectionId"`
 }
 
@@ -5586,7 +5586,7 @@ type VPNConnection struct {
 	Options                      *VPNConnectionOptions `ec2:"Options" xml:"options"`
 	Routes                       []VPNStaticRoute      `ec2:"Routes" xml:"routes>item"`
 	State                        aws.StringValue       `ec2:"State" xml:"state"`
-	Tags                         []Tag                 `ec2:"Tags" xml:"tagSet>item"`
+	Tags                         []Tag                 `ec2:"Tag" xml:"tagSet>item"`
 	Type                         aws.StringValue       `ec2:"Type" xml:"type"`
 	VGWTelemetry                 []VGWTelemetry        `ec2:"VgwTelemetry" xml:"vgwTelemetry>item"`
 	VPNConnectionID              aws.StringValue       `ec2:"VpnConnectionId" xml:"vpnConnectionId"`
@@ -5607,7 +5607,7 @@ type VPNConnectionOptionsSpecification struct {
 type VPNGateway struct {
 	AvailabilityZone aws.StringValue `ec2:"AvailabilityZone" xml:"availabilityZone"`
 	State            aws.StringValue `ec2:"State" xml:"state"`
-	Tags             []Tag           `ec2:"Tags" xml:"tagSet>item"`
+	Tags             []Tag           `ec2:"Tag" xml:"tagSet>item"`
 	Type             aws.StringValue `ec2:"Type" xml:"type"`
 	VPCAttachments   []VPCAttachment `ec2:"VpcAttachments" xml:"attachments>item"`
 	VPNGatewayID     aws.StringValue `ec2:"VpnGatewayId" xml:"vpnGatewayId"`
