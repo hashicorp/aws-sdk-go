@@ -5114,7 +5114,7 @@ type RunInstancesRequest struct {
 	MaxCount                          aws.IntegerValue                        `ec2:"MaxCount" xml:"MaxCount"`
 	MinCount                          aws.IntegerValue                        `ec2:"MinCount" xml:"MinCount"`
 	Monitoring                        *RunInstancesMonitoringEnabled          `ec2:"Monitoring" xml:"Monitoring"`
-	NetworkInterfaces                 []InstanceNetworkInterfaceSpecification `ec2:"NetworkInterfaces" xml:"networkInterface>item"`
+	NetworkInterfaces                 []InstanceNetworkInterfaceSpecification `ec2:"NetworkInterface" xml:"networkInterface>item"`
 	Placement                         *Placement                              `ec2:"Placement" xml:"Placement"`
 	PrivateIPAddress                  aws.StringValue                         `ec2:"PrivateIpAddress" xml:"privateIpAddress"`
 	RAMDiskID                         aws.StringValue                         `ec2:"RamdiskId" xml:"RamdiskId"`
