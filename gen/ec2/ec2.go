@@ -4281,7 +4281,7 @@ type IPPermission struct {
 	IPProtocol       aws.StringValue   `ec2:"IpProtocol" xml:"ipProtocol"`
 	IPRanges         []IPRange         `ec2:"IpRanges" xml:"ipRanges>item"`
 	ToPort           aws.IntegerValue  `ec2:"ToPort" xml:"toPort"`
-	UserIDGroupPairs []UserIDGroupPair `ec2:"UserIdGroupPairs" xml:"groups>item"`
+	UserIDGroupPairs []UserIDGroupPair `ec2:"Groups" xml:"groups>item"`
 }
 
 // IPRange is undocumented.
