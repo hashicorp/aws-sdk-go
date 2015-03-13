@@ -226,6 +226,20 @@ func (m Member) EC2Tag() string {
 		name = m.Name
 	}
 
+	// Perform some manual replacements
+	switch name {
+	case "Tags":
+		name = "Tag"
+	case "Resources":
+		name = "ResourceId"
+	case "InternetGatewayIds":
+		name = "InternetGatewayId"
+	case "NetworkInterfaces":
+		name = "NetworkInterface"
+	case "UserIdGroupPairs":
+		name = "Groups"
+	}
+
 	return fmt.Sprintf("`ec2:%q xml:%q`", name, strings.Join(path, ">"))
 }
 
