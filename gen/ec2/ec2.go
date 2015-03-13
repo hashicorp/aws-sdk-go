@@ -3223,7 +3223,7 @@ type DescribeNetworkInterfacesRequest struct {
 
 // DescribeNetworkInterfacesResult is undocumented.
 type DescribeNetworkInterfacesResult struct {
-	NetworkInterfaces []NetworkInterface `ec2:"NetworkInterfaces" xml:"networkInterfaceSet>item"`
+	NetworkInterfaces []NetworkInterface `ec2:"NetworkInterface" xml:"networkInterfaceSet>item"`
 }
 
 // DescribePlacementGroupsRequest is undocumented.
@@ -4009,7 +4009,7 @@ type Instance struct {
 	KeyName               aws.StringValue              `ec2:"KeyName" xml:"keyName"`
 	LaunchTime            time.Time                    `ec2:"LaunchTime" xml:"launchTime"`
 	Monitoring            *Monitoring                  `ec2:"Monitoring" xml:"monitoring"`
-	NetworkInterfaces     []InstanceNetworkInterface   `ec2:"NetworkInterfaces" xml:"networkInterfaceSet>item"`
+	NetworkInterfaces     []InstanceNetworkInterface   `ec2:"NetworkInterface" xml:"networkInterfaceSet>item"`
 	Placement             *Placement                   `ec2:"Placement" xml:"placement"`
 	Platform              aws.StringValue              `ec2:"Platform" xml:"platform"`
 	PrivateDNSName        aws.StringValue              `ec2:"PrivateDnsName" xml:"privateDnsName"`
@@ -4325,7 +4325,7 @@ type LaunchSpecification struct {
 	KernelID            aws.StringValue                         `ec2:"KernelId" xml:"kernelId"`
 	KeyName             aws.StringValue                         `ec2:"KeyName" xml:"keyName"`
 	Monitoring          *RunInstancesMonitoringEnabled          `ec2:"Monitoring" xml:"monitoring"`
-	NetworkInterfaces   []InstanceNetworkInterfaceSpecification `ec2:"NetworkInterfaces" xml:"networkInterfaceSet>item"`
+	NetworkInterfaces   []InstanceNetworkInterfaceSpecification `ec2:"NetworkInterface" xml:"networkInterfaceSet>item"`
 	Placement           *SpotPlacement                          `ec2:"Placement" xml:"placement"`
 	RAMDiskID           aws.StringValue                         `ec2:"RamdiskId" xml:"ramdiskId"`
 	SecurityGroups      []GroupIdentifier                       `ec2:"SecurityGroups" xml:"groupSet>item"`
