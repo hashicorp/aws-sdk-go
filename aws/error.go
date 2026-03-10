@@ -1,3 +1,5 @@
+// Copyright IBM Corp. 2014, 2015
+
 package aws
 
 // An APIError is an error returned by an AWS API.

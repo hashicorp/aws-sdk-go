@@ -1,3 +1,5 @@
+// Copyright IBM Corp. 2014, 2015
+
 package cfn
 
 // The CloudTrail resource creates a trail and specifies where logs are
