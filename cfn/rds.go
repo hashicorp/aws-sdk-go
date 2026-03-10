@@ -1,3 +1,5 @@
+// Copyright IBM Corp. 2014, 2015
+
 package cfn
 
 // A DBSubnetGroup places an RDS instance in a set of VPC subnets.

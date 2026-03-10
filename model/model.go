@@ -1,3 +1,5 @@
+// Copyright IBM Corp. 2014, 2015
+
 // Package model contains functionality to generate clients for AWS APIs.
 package model
 

@@ -1,3 +1,5 @@
+// Copyright IBM Corp. 2014, 2015
+
 // Package cfn provides functionality for creating AWS CloudFormation templates.
 package cfn
 
